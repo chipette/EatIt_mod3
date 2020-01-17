@@ -1,0 +1,40 @@
+// Layout
+$grid-breakpoints: (
+  xs: 0,
+  sm: 375px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$maxWidth: 1200px;
+$bpMedium: 768px;
+$bpLarge : 992px;
+$marge   : 15px;
+
+// Typos
+$fontDefault: 'pier_sansregular', 'Trebuchet MS', sans-serif;
+$fontTitle: "Bello-Pro", $fontDefault;
+$bold: 'pier_sansbold', 'Trebuchet MS', sans-serif;
+
+// Colors
+$blue  : #2e4c9c;
+$orange: #ed863e;
+$pink  : #c0398d;
+$green : #51b262;
+
+$orange60: #f6ba8b;
+$orange20: #fbe7db;
+
+$colors: 
+  (
+    "blue":       $blue,
+    "pink":       $pink,
+    "orange":     $orange,
+);
+
+$primary  : $blue;
+$secondary: $orange;
+$info     : $pink;
+
+$link-color: $blue;

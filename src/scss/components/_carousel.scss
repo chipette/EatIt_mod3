@@ -1,0 +1,52 @@
+.carousel_partenaires .card,
+.carousel_avis .card {
+  border-radius: 18px;
+  background-color: $white;
+  max-width: 280px;
+}
+
+.card-img, .card-img-top {
+  border-radius: 18px 18px 0 0;
+}
+
+.owl-carousel .owl-nav {
+  button.owl-prev,
+  button.owl-next {
+    color: $primary;
+    position: absolute;
+    top: 50%;
+  }
+
+  button.owl-prev {
+    left: -2rem,
+  }
+
+  button.owl-next {
+    right: -2rem;
+  }
+}
+
+.card-body .auteur {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  h2 {
+    margin-bottom: 0;
+    margin-left: 1rem;
+    font-size: 1.325rem;
+  }
+}
+
+h3.card-title {
+  margin-top: 12px;
+  font-size: 1.25rem;
+}
+
+.carousel_avis h3.card-title {
+  text-transform: capitalize;
+}
+
+.owl-carousel {
+  display: flex;
+}

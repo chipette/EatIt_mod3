@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+body { 
+  margin: 0;
+  font-family: $fontDefault;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-family: $fontTitle;
+  font-size: 3rem;
+  color: $blue;
+}
+
+h2 {
+  font-family: $fontDefault;
+}
+
+h3 {
+  font-family: $bold;
+  text-transform: uppercase;
+  font-size: 1.375rem;
+  color: $blue;
+}
+
+h4 {
+  font-family: $bold;
+  color: $blue;
+}
+
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+a,
+.btn-link {
+  text-decoration: none;
+}
