@@ -7,6 +7,21 @@ import owlCarousel from 'owl.carousel';
 
 $(document).ready(function () {
 
+  //affichage menu déroulant progressif au survol
+  $('.mobile_nav li.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
+
+  //affichage menu déroulant progressif au survol
+  $('.main_nav li.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
+
+  //animation accordéon
   var js_accordion = $(".js-accordion"),
     collapse_trigger = js_accordion.find(".btn-link");
   if (js_accordion.length > 0) {
@@ -49,7 +64,7 @@ $(document).ready(function () {
   }
 
 
-
+  //Animation caroussel restos
   $(".carousel_partenaires").owlCarousel({
     items: 3,
     loop: true,
@@ -70,7 +85,7 @@ $(document).ready(function () {
   });
 
 
-
+  //Animation caroussel avis
   $(".carousel_avis").owlCarousel({
     items: 3,
     loop: true,

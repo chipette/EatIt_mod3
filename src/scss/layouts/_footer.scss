@@ -1,5 +1,5 @@
 footer {
-  background-color: $orange60;
+  background-color: $orange;
   padding-top: 40px;
   padding-bottom: 80px;
   font-family: $fontDefault;
@@ -11,7 +11,7 @@ footer {
 
   a:hover {
     text-decoration: none;
-    color: $pink;
+    color: $red;
   }
 
   .logo_infos {
@@ -77,6 +77,10 @@ ul.social_nav {
 
   li a {
     font-size: 1.5rem;
+
+    i:hover {
+      color: $red;
+    }
   }
 }
 
@@ -101,5 +105,5 @@ ul.footer_nav {
   content: " ";
   min-width: 100%;
   height: 2px;
-  background-color: #ffffff;
+  background-color: $red;
 }

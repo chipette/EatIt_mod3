@@ -44,7 +44,7 @@
   }
 
   .bg-orange20 {
-    background-color: $orange20;
+    background-color: $orange;
   }
 
   .navbar-light .navbar-nav .nav-link {
@@ -53,11 +53,11 @@
     font-size: 1.25rem;
 
     &:hover {
-      color: $orange;
+      color: $red;
     }
 
     i {
-      color: $pink;
+      color: $green;
 
       &:hover {
         color: $blue;
@@ -72,11 +72,11 @@
     background: url(../images/header_img_L.jpg);
     background-size: cover;
     height: 60vh;
-    padding: 160px 80px 80px 80px;
+    padding: 90px 40px 80px 80px;
 
     @media (min-width: $bpLarge){
       height: 80vh;
-      padding: 300px 80px 80px 80px;
+      padding: 100px 40px 80px 80px;
     }
 
     .container {
@@ -87,7 +87,7 @@
         flex-direction: column;
         align-items: center;
         margin-left:auto;
-        padding: 40px;
+        padding: 20px;
         border: 2px solid #ffffff;
         border-radius: 20px;
         text-shadow:1px 1px 4px #0000007a;

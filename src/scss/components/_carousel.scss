@@ -1,9 +1,17 @@
+
+
 .carousel_partenaires .card,
 .carousel_avis .card {
   border-radius: 18px;
   background-color: $white;
-  max-width: 280px;
+  max-width: 250px;
+  margin: 10px;
+  box-shadow: 5px 5px 8px $pink;
 }
+
+// .carousel_partenaires .card {
+//   box-shadow: 5px 5px 8px $pink;
+// }
 
 .card-img, .card-img-top {
   border-radius: 18px 18px 0 0;

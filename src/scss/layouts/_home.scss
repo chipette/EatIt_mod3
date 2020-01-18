@@ -1,6 +1,4 @@
 .home main {
-  background: url(../images/degrade3.svg);
-  background-size: cover;
 }
 
 section.commande_rapide {
@@ -48,28 +46,33 @@ section.eatEcolo {
   text-transform: lowercase;
 }
 
+h3.dark_red {
+  color: $red-dark;
+}
+
+h3.green {
+  color: $green;
+}
+
 .text-primary {
   font-weight: bold;
 }
 
+
 section.partenaires {
+  background-image: url(../images/bg_resto.jpg);
+  background-size: cover;
   position: relative;
   
   @media (min-width: $bpMedium){
-    padding-top: 140px;
+    padding-top: 80px;
   }
 
   h3 a {
-    color: $pink;
+    color: $red;
   }
-
 }
 
-.elementGraphique {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
 
 section.process {
   .etape_process {
@@ -134,14 +137,16 @@ section.process {
 }
 
 section.avis {
+  background-image: url(../images/bg_resto.jpg);
+  background-size: cover;
   position: relative;
 
   fieldset {
     margin-top: 50px;
     padding: 40px;
-    background-color: #ffffff;
+    background-color: $light;
     border-radius: 24px;
-    box-shadow: 1px 1px 12px #c0398d;
+    box-shadow: 5px 5px 12px $pink;
 
     @media (min-width: $bpMedium){
       margin-top: 80px;
@@ -149,7 +154,7 @@ section.avis {
   }
 
   @media (min-width: $bpMedium){
-    padding-top: 140px;
+    padding-top: 80px;
   }
 }
 

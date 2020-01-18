@@ -1,1 +1,5 @@
-/nbproject/private/
+node_modules/
+.DS_Store
+.idea/
+*.bak
+config/parameters.php

@@ -18,13 +18,13 @@ $fontTitle: "Bello-Pro", $fontDefault;
 $bold: 'pier_sansbold', 'Trebuchet MS', sans-serif;
 
 // Colors
-$blue  : #2e4c9c;
-$orange: #ed863e;
-$pink  : #c0398d;
-$green : #51b262;
-
-$orange60: #f6ba8b;
-$orange20: #fbe7db;
+$blue    : #07672f;    //vert foncé
+$orange  : #ffffff;    //blanc
+$red     : #e62f29;
+$red-dark: #9a1915;
+$pink    : #0000002a;  //ombrage
+$green   : #39ab61;
+$light   : #f6eddc;
 
 $colors: 
   (
@@ -34,7 +34,7 @@ $colors:
 );
 
 $primary  : $blue;
-$secondary: $orange;
-$info     : $pink;
+$secondary: $green;
+$info     : $red;
 
 $link-color: $blue;
