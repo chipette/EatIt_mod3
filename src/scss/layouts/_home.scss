@@ -68,8 +68,17 @@ section.partenaires {
     padding-top: 80px;
   }
 
+  h1,
+  .intro {
+    text-shadow: 1px 1px 5px $light;
+  }
+
   h3 a {
     color: $red;
+    
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -140,6 +149,11 @@ section.avis {
   background-image: url(../images/bg_resto.jpg);
   background-size: cover;
   position: relative;
+
+  h1 {
+    text-shadow: 1px 1px 5px $light;
+  }
+
 
   fieldset {
     margin-top: 50px;
