@@ -6,7 +6,8 @@
   }
 }
 
-.main_nav {
+.main_nav,
+.sec_nav {
   box-shadow: 0px 3px 5px $pink;
 }
 
@@ -43,4 +44,10 @@
 
 .navbar-collapse:hover {
   color: $red;
+}
+
+.sec_nav {
+  ul {
+    margin: 0 auto;
+  }
 }
