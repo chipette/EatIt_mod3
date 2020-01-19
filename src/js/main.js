@@ -21,6 +21,7 @@ $(document).ready(function () {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
   });
 
+
   //animation accordéon
   var js_accordion = $(".js-accordion"),
     collapse_trigger = js_accordion.find(".btn-link");

@@ -1,6 +1,3 @@
-.home main {
-}
-
 section.commande_rapide {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -67,6 +64,10 @@ section.partenaires {
   h1,
   .intro {
     text-shadow: 1px 1px 5px $light;
+  }
+
+  .intro {
+    font-size: 1.25rem;
   }
 
   h3 a {
