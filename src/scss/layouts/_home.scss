@@ -64,10 +64,6 @@ section.partenaires {
   background-size: cover;
   position: relative;
   
-  @media (min-width: $bpMedium){
-    padding-top: 80px;
-  }
-
   h1,
   .intro {
     text-shadow: 1px 1px 5px $light;

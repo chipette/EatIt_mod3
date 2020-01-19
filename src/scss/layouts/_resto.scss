@@ -1,39 +1,187 @@
-.restos .container, .presentation_restos, .restos_title, .restos_txt {
+
+.restos {
+  display: flex;
+  padding: 40px 0 20px 0;
+
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    @media (min-width: $bpMedium) {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .restos_img {
+      width: 150px;
+
+      img {
+        border-radius: 18px;
+        border-color: $red-dark;
+      }
+
+      @media (min-width: $bpMedium) {
+        max-width: 230px;
+      }
+    }
+  }
+}
+
+.presentation_resto {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 66.66%;
+  padding-right: 20px;
+}
+
+.restos_title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-top: 15px;
+
+  @media (min-width:$bpMedium) {
+    margin-top: 0;
+  }
+
+  h2 {
+    margin: 0;
+    padding-left: 0.625rem;
+    font-size: 1.5rem;
+
+    @media (min-width:$bpMedium) {
+      font-size: 2em;
+    }
+  }
+}
+
+.restos_txt {
+  display: flex;
+  flex-direction: column;
+
+  p:nth-of-type(1) {
+    font-style: italic;
+  }
+}
+
+
+
+
+.menus {
+  background: url(../images/bg_resto.jpg) no-repeat;
+  background-size: cover;
+  padding-top: 67px;
+  padding-bottom: 60px;
+
+  @media (min-width: $bpMedium) {
+    padding-bottom: 150px;
+  }
+
+  h1 {
+  text-shadow: 1px 1px 5px $light;
+  }
+}
+
+
+.menus_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $bpMedium) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin-bottom: 15px;
+    border-radius: 18px;
+    max-width: 230px;
+
+    h5 {
+      color: $red-dark;
+    }
+  }
+}
+
+
+
+
+/* Entrées et accompagnements (page resto)------------------------------------------------------------------------------ */
+
+.accompagnements {
+  padding-top: 60px;
+}
+
+
+.desserts, .boissons {
+  padding-top: 60px;
+}
+
+
+.bloc_titre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid $red-dark;
+
+  @media (min-width: $bpMedium){
+    flex-direction: row;
+  }
+
+  h1 {
+    margin-bottom: 0;
+    margin: 15px auto;
+
+    @media (min-width: $bpMedium){
+      margin-top: 0;
+    }
+
+  }
+
+  img {
+    width: 150px;
+    border-radius: 18px;
+
+    @media (min-width: $bpMedium){
+      max-width: 212px;
+    }
+  }
+}
+
+
+.bloc_txt, .plat {
   display: flex;
 }
 
 
-.restos.container {
-  padding: 65px 0 0 10px;
-}
-
-
-.restos .restos_logo {
-  width: 50px;
-  height: 50px;
-}
-
-
-.restos h2 {
-  margin: 0;
-  margin-top: auto;
-  padding-left: 0.625rem;
-  font-size: 2em;
-}
-
-
-.restos .restos_txt {
+.bloc_txt {
   flex-direction: column;
-  flex-basis: 66.66%;
-}
+  border-bottom: 1px solid $red-dark;
 
-
-.restos .restos_txt p:nth-of-type(1) {
-  padding-right: 160px;
+  p {
+    color: $blue;
   font-style: italic;
+  }
+
+  .plat {
+    margin-top: 60px;
+
+    p {
+      margin-bottom:0;
+      font-weight: bold;
+      font-size: 1.125em;
+      color: $red-dark;
+
+      &:nth-of-type(2){
+        margin-left: auto;
+        color: $red-dark
+      }
+    }
+  }
 }
-
-
-
 
 

@@ -68,7 +68,7 @@
             
           <article class="presentation_resto">
             <div class="restos_title">
-              <div class="restos_logo"><img src="images/logo_resto1.svg" alt="logo Basilic & Co"></div>
+              <div class="restos_logo"><img src="images/logo_bCo.svg" alt="logo Basilic & Co" width="50"></div>
               <h2>Basilic & Co - Rennes</h2>
             </div>
 
@@ -86,11 +86,10 @@
           </article>
 
 
-          <div class="restos_img">
-            <img src="images/img_resto1.jpg" alt="pizza">
-          </div><!--/resto_img-->
+          <div class="restos_img"><img src="images/img_resto_bCo.jpg" alt="pizza" ></div><!--/resto_img-->
 
         </div><!--/container-->
+      </section><!--/resto-->
         
         <nav class="navbar navbar-expand-lg navbar-light bg-orange d-none d-md-block sec_nav mt-3">
           <div class="container">
@@ -114,7 +113,6 @@
         </nav>
         
 
-    </section><!--/resto-->
 
   </header><!--/page_header-->
 
@@ -125,48 +123,50 @@
     <section class="menus" id="menu">
 
       <div class="container">
-        <h1>Pizzas</h1>
+        <h1 class="text-center">Pizzas</h1>
 
-        <div class="menus_list">
-          <div class="list">
-            <div class="img_menu"><img src="images/bCo_alpes.jpg" alt="pizza 4 fromages" title="4 fromages des Alpes"></div> 
-            <div class="txt">
-              <h4>Pizza 4 fromages des Alpes</h4>
-              <p>Sauce tomate BIO maison, mozzarella artisanale française, Tome des Bauges AOP, Bleu du Vercors AOP, Reblochon de Savoie AOP et origan.
-              </p>
-              <p>13€90</p>
-            </div><!--/txt-->
-          </div><!--/menu_1-->
+        <div class="menus_list mt-5">
+
+            <div class="card border-0">
+              <img class="card-img-top img_menu" src="images/bCo_alpes.jpg" alt="pizza 4 fromages">
+              <div class="card-body">
+                <h5 class="card-title">Pizza 4 fromages des Alpes</h5>
+                <p class="card-text">Sauce tomate BIO maison, mozzarella artisanale française, Tome des Bauges AOP, Bleu du Vercors AOP, Reblochon de Savoie AOP et origan.</p>
+                <p class="card-text prix">13€90</p>
+                <a href="#" class="btn btn-primary">Commander</a>
+              </div>
+            </div>
+
+            <div class="card border-0">
+              <img class="card-img-top img_menu" src="images/bCo_flammenkuche.jpg" alt="flammekuche">
+              <div class="card-body">
+                <h5 class="card-title">Flammenkeuche</h5>
+                <p class="card-text">Fromage blanc et crème fraîche, fondue d’oignons maison, poitrine paysanne fumée au bois de hêtre et munster AOP.</p>
+                <p class="card-text">14€90</p>
+                <a href="#" class="btn btn-primary">Commander</a>
+              </div>
+            </div>
           
+            <div class="card border-0">
+              <img class="card-img-top img_menu" src="images/bCo_meridionnale.jpg" alt="pizza méridionnale">
+              <div class="card-body">
+                <h5 class="card-title">Pizza méridionale</h5>
+                <p class="card-text">Sauce tomate BIO maison, mozzarella artisanale française, chiffonnade de jambon blanc ardéchois, champignons frais, œuf, filet d’huile artisanale au basilic et origan.</p>
+                <p class="card-text">12€90</p>
+                <a href="#" class="btn btn-primary">Commander</a>
+              </div>
+            </div>
 
-          <div class="list">
-            <div class="img_menu"><img src="images/bCo_flammekuche.jpg" alt="flammekuche" title="flammekuche"></div> 
-            <div class="txt">
-              <h4>Flammekeuche</h4>
-              <p>Fromage blanc et crème fraîche, fondue d’oignons maison, poitrine paysanne fumée au bois de hêtre et munster AOP.</p>
-              <p>14€90</p>
-            </div><!--/txt-->
-          </div><!--/menu_2-->
-          
+            <div class="card border-0">
+              <img class="card-img-top img_menu" src="images/bCo_vegetarienne.jpg" alt="pizza végétarienne">
+              <div class="card-body">
+                <h5 class="card-title">Pizza végétarienne</h5>
+                <p class="card-text">Sauce tomate BIO maison, mozzarella artisanale française, champignons frais, poivrons frais, fondue d’oignons maison, filet d’huile artisanale au basilic et origan.</p>
+                <p class="card-text">13€90</p>
+                <a href="#" class="btn btn-primary">Commander</a>
+              </div>
+            </div>
 
-          <div class="list">
-            <div class="img_menu"><img src="images/bCo_meridionnale.jpg" alt="pizza méridionale" title="pizza méridionnale"></div>
-            <div class="txt">
-              <h4>Pizza méridionale</h4>
-              <p>Sauce tomate BIO maison, mozzarella artisanale française, chiffonnade de jambon blanc ardéchois, champignons frais, œuf, filet d’huile artisanale au basilic et origan.</p>
-              <p>12€90</p>
-            </div><!--/txt-->
-          </div><!--/menu_3-->
-
-
-          <div class="list">
-            <div class="img_menu"><img src="images/bCo_vegetarienne.jpg" alt="pizza végétaerinne" title="pizza végétarienne"></div>
-            <div class="txt">
-              <h4>Pizza végétarienne</h4>
-              <p>Sauce tomate BIO maison, mozzarella artisanale française, champignons frais, poivrons frais, fondue d’oignons maison, filet d’huile artisanale au basilic et origan.</p>
-              <p>13€90</p>
-            </div><!--/txt-->
-          </div><!--/menu_4-->
         </div><!--/menus_list-->
 
       </div><!--/container-->
@@ -202,7 +202,7 @@
         <div class="bloc_titre">
           <div class="img"><img src="images/bCo_glaces.jpg" alt="glaces"></div>
             <h1>Desserts</h1>
-          </div>
+        </div>
 
           <div class="bloc_txt">
             <div class="plat">
@@ -241,8 +241,33 @@
     <section class="boissons" id="boisson">
 
       <div class="container">
-        <h1>Boissons</h1>
+        <div class="bloc_titre">
+          <div class="img"><img src="images/bCo_jus.jpg" alt="jus de pommes"></div>
+            <h1>Boissons</h1>
+        </div>
 
+        <div class="bloc_txt">
+          <div class="plat">
+            <p>Jus de pomme artisanal</p>
+            <p>3,90€</p>
+          </div>
+        </div>
+
+        <div class="bloc_txt">
+          <div class="plat">
+            <p>Limonade artisanale</p>
+            <p>4,90€</p>
+          </div>
+          <p>Différents parfums: nature, grenadine, pêche</p>
+        </div>
+
+        <div class="bloc_txt">
+          <div class="plat">
+            <p>Eaux</p>
+            <p>2,90€</p>
+          </div>
+          <p>Evian, Badoit, San Pelegrino</p>
+        </div>
         
       </div><!--/container-->  
     </section><!--/temoignages -->
