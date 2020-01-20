@@ -95,7 +95,7 @@ $specialites = getAllRows("specialite");
                     <?php $restaurants = getAllRowsToCat("restaurant", "specialite_id", $specialite["id"]); ?>
                     
                         <?php foreach ($restaurants as $restaurant) : ?>
-                            <a class="dropdown-item" href="resto.php"><?= $restaurant["nom"]; ?></a>
+                            <a class="dropdown-item" href="resto.php?id=<?= $restaurant["id"]; ?>"><?= $restaurant["nom"]; ?></a>
                         <?php endforeach; ?>
                         
                   <?php endforeach; ?>
@@ -139,7 +139,7 @@ $specialites = getAllRows("specialite");
                     <?php $restaurants = getAllRowsToCat("restaurant", "specialite_id", $specialite["id"]); ?>
                     
                         <?php foreach ($restaurants as $restaurant) : ?>
-                            <a class="dropdown-item" href="resto.php"><?= $restaurant["nom"]; ?></a>
+                            <a class="dropdown-item" href="resto.php?id=<?= $restaurant["id"]; ?>"><?= $restaurant["nom"]; ?></a>
                         <?php endforeach; ?>
                         
                   <?php endforeach; ?>

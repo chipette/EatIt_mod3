@@ -1,6 +1,5 @@
 <?php require_once 'layout/header_resto.php';
 
-require_once __DIR__ . "/../model/database.php";
 
 ?>
 

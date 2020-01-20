@@ -2,7 +2,12 @@
 //je fais le lien entre le fichier-ci et celui qui contient le lien avec la bdd
 require_once __DIR__ . "/../model/database.php";
 
+$id = $_GET["id"]; //je récupère l'id du resto sur lequel l'utilisateur a cliqué
+$resto = getOneRow("restaurant", $id); //récupère la ligne qui correspond à l'id récupéré via l'url
+$image = (empty($resto["image"])) ? "images/favicon.svg" : "uploads/" .$resto["image"];
+$logo = (empty($resto["logo"])) ? "images/favicon2.png" : "uploads/" .$resto["logo"];
 $specialites = getAllRows("specialite");
+
 
 ?>
 
@@ -120,25 +125,20 @@ $specialites = getAllRows("specialite");
 
             <article class="presentation_resto">
               <div class="restos_title">
-                <div class="restos_logo"><img src="images/logo_bCo.svg" alt="logo Basilic & Co" width="50"></div>
-                <h2>Basilic & Co - Rennes</h2>
+                 
+                <div class="restos_logo"><img src="<?= $logo; ?>" alt="<?= "logo " .$resto["nom"]; ?>" width="50"></div>
+                <h2><?= $resto["nom"] ?></h2>
               </div>
 
               <div class="restos_txt">
-                <p>Pizza & spécialités italiennes.
-                  Ouvert de 11h30 à 14h30 et de 18h à 00h30</br>
-                  1 rue du Maréchal Joffre, Rennes, 35000
-                </p>
+                <p><?= $resto["adresse"]; ?></p>
 
-                <p>Pizza de terroir 100% fait maison à partir d’ingrédients français artisanaux : 
-                  pâte fraîche maison étalée à la main, sauce tomate maison, mozzarella artisanale française, 
-                  fromages labellisés, viandes 100% d’origine française.
-                </p>
+                <p><?= $resto["description"]; ?></p>
               </div>
             </article>
 
 
-            <div class="restos_img"><img src="images/img_resto_bCo.jpg" alt="pizza" ></div><!--/resto_img-->
+            <div class="restos_img"><img src="<?= $image; ?>" alt="<?= "logo " .$resto["nom"]; ?>" ></div><!--/resto_img-->
 
           </div><!--/container-->
         </section><!--/resto-->

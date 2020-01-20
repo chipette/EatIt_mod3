@@ -1,10 +1,6 @@
-<?php 
-
-require_once 'layout/header.php'; 
+<?php require_once 'layout/header.php'; ?>
 
 
-
-?>
 
       <section class="d-block d-md-none commande_rapide">
         <div class="container">
@@ -86,7 +82,7 @@ require_once 'layout/header.php';
                           <div class="carousel_partenaires owl-carousel px-sm- mt-5 center"> 
                             <?php $restaurants = getAllRowsToCat("restaurant", "specialite_id", $specialite["id"]); ?>
                             <?php foreach ($restaurants as $restaurant) : ?>
-                            <?php $image = (empty($restaurant["image"])) ? "images/favicone2.png" : "uploads/" .$restaurant["image"]; ?>
+                            <?php $image = (empty($restaurant["image"])) ? "images/favicon2.png" : "uploads/" .$restaurant["image"]; ?>
                               <article class="card border-0">
                                 <a href="resto.php?id=<?= $restaurant["id"]; ?>"><img src="<?= $image; ?>" class="card-img-top" alt="<?= $restaurant["nom"]; ?>"></a>
                                 <div class="card-body">
