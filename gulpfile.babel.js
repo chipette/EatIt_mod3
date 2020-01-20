@@ -37,11 +37,8 @@ const paths = {
 
 export const serve = (done) => {
 	server.init({
-    server: {
-      baseDir: "./"
-    },
-    port: 3000
-  });
+		proxy: "http://localhost:8888/Projet_mod3/EatIt_mod3/dist/"
+	});
 	done();
 }
 
@@ -75,6 +72,7 @@ export const watch = () => {
 	gulp.watch('src/scss/**/*.scss', styles);
 	gulp.watch('src/js/**/*.js', gulp.series(scripts, reload));
 	gulp.watch('**/*.html', reload);
+	gulp.watch('**/**/*.php', reload);
 	gulp.watch(paths.images.src, gulp.series(images, reload));
 	gulp.watch(paths.misc.src, gulp.series(copy, reload));
 } 
