@@ -5,7 +5,7 @@ require_once __DIR__ . "/model/database.php";
 $id = $_GET["id"]; //je récupère l'id du resto sur lequel l'utilisateur a cliqué
 $resto = getOneRow("restaurant", $id); //récupère la ligne qui correspond à l'id récupéré via l'url
 $image = (empty($resto["image"])) ? "images/favicon.svg" : "uploads/" . $resto["image"];
-$logo = (empty($resto["logo"])) ? "images/favicon2.png" : "images/" . $resto["logo"];
+$logo = (empty($resto["logo"])) ? "images/favicon2.png" : "uploads/" . $resto["logo"];
 $specialites = getAllRows("specialite");
 
 $plats = getAllRows("plat", ["restaurant_id" => $id, "type_plat_id" => 1]);

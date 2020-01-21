@@ -18,9 +18,15 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo isActive("/crud/medecin/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/medecin/">
-                    <i class="fa fa-user-md"></i>
-                    Médecins
+                <a class="nav-link <?php echo isActive("/crud/restaurant/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/restaurant/">
+                    <i class="fa fa-home"></i>
+                    Restaurants
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <?php echo isActive("/crud/plat/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/plat/">
+                    <i class="fa fa-cutlery"></i>
+                    Plats
                 </a>
             </li>
         </ul>

@@ -15,15 +15,13 @@
           </div><!--/logo_infos -->  
 
           <ul class="navbar-nav social_nav">
-            <li class="nav-item">
-              <a class="nav-link" href="http://www.instagram.com" target="blank" title="Suivez-nous sur Instagram"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i><span class="sr-only">Instagram</span></a>
-            </li>
-            <li class="nav-item ml-5 mr-5">
-              <a class="nav-link" href="http://www.twitter.fr" target="blank" title="Suivez-nous sur Twitter"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i><span class="sr-only">Twitter</span></a> 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://www.facebook.fr" target="blank" title="Suivez-nous sur Facebook"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i><span class="sr-only">Facebook</span></a>
-            </li>
+            <?php foreach ($reseaux_sociaux as $reseau_social) : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= $reseau_social["url"]; ?>" target="blank" title="Suivez-nous sur <?= $reseau_social["nom"]; ?>"
+                        <i class="fa <?= $reseau_social["icone"]; ?>"></i>
+                    </a><span class="sr-only"><?= $reseau_social["nom"]; ?></span>
+                </li>
+            <?php endforeach; ?>
           </ul>
         </div><!--/footer_top-->
         
