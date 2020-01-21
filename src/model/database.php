@@ -28,15 +28,33 @@ foreach ($files as $filepath) {
  * creation de fonction générique qui nous retourne toutes les lignes de la table de la bdd spécifiée en paramètre
  * @global type $connexion : Connexion à la base de données
  * @param string $table : nom de la table
+ * @param array $where : Clause WHERE
+ * @param array $orderBy : Clause ORDER BY
  * @return type Array : Lignes des tables
  */
-function getAllRows(string $table) {
+function getAllRows(string $table, array $where = [], array $orderBy = []) {
     global $connexion; //je définie la portée de la variable $connexion comme étant "globale", donc elle existe dans la fonction
     
     // Exécuter une requête SQL
-    $query = "SELECT * FROM $table";//je définie ma requête
+    $query = "SELECT * FROM $table ";//je définie ma requête
+    
+    $query .= "WHERE 1 = 1";
+    foreach ($where as $column => $value) {
+        $query .= " AND $column = :$column";
+    }
+    
+    if (count($orderBy) > 0) {
+        $query .= " ORDER BY";
+        foreach ($orderBy as $column => $order) {
+            $query .= " $column $order,";
+        }
+        $query = rtrim($query, ","); // Retirer la dernière virgule
+    }
 
     $stmt = $connexion->prepare($query);//je prépare la requête
+    foreach ($where as $column => $value) {
+        $stmt->bindParam(":$column", $value);
+    }
     $stmt->execute(); //j'exécute la requête
 
     // Retourner les résultats sous forme de tableau que l'on parcourera avec une boucle
@@ -54,10 +72,10 @@ function getAllRowsToCat(string $table, string $entree_id, int $id) {
     global $connexion; //je définie la portée de la variable $connexion comme étant "globale", donc elle existe dans la fonction
     
     // Exécuter une requête SQL
-    $query = "SELECT * FROM $table WHERE $entree_id = $id";//je définie ma requête
+    $query = "SELECT * FROM $table WHERE $entree_id = :id";//je définie ma requête
 
     $stmt = $connexion->prepare($query);//je prépare la requête
-    //$stmt->bondParam(":id", $id);
+    $stmt->bindParam(":id", $id);
     $stmt->execute(); //j'exécute la requête
 
     // Retourner les résultats sous forme de tableau que l'on parcourera avec une boucle

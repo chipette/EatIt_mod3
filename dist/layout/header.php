@@ -92,7 +92,7 @@ $specialites = getAllRows("specialite");
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMobile">
                   <?php foreach ($specialites as $specialite) : ?>
                     <h5 class="dropdown-header"><?= $specialite["libelle"]; ?></h5>
-                    <?php $restaurants = getAllRowsToCat("restaurant", "specialite_id", $specialite["id"]); ?>
+                    <?php $restaurants = getAllRows("restaurant", ["specialite_id" => $specialite["id"]]); ?>
                     
                         <?php foreach ($restaurants as $restaurant) : ?>
                             <a class="dropdown-item" href="resto.php?id=<?= $restaurant["id"]; ?>"><?= $restaurant["nom"]; ?></a>
@@ -136,7 +136,7 @@ $specialites = getAllRows("specialite");
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <?php foreach ($specialites as $specialite) : ?>
                     <h5 class="dropdown-header"><?= $specialite["libelle"]; ?></h5>
-                    <?php $restaurants = getAllRowsToCat("restaurant", "specialite_id", $specialite["id"]); ?>
+                    <?php $restaurants = getAllRows ("restaurant", ["specialite_id" => $specialite["id"]]); ?>
                     
                         <?php foreach ($restaurants as $restaurant) : ?>
                             <a class="dropdown-item" href="resto.php?id=<?= $restaurant["id"]; ?>"><?= $restaurant["nom"]; ?></a>

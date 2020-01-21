@@ -80,7 +80,7 @@
                       <div class="card-body">
 
                           <div class="carousel_partenaires owl-carousel px-sm- mt-5 center"> 
-                            <?php $restaurants = getAllRowsToCat("restaurant", "specialite_id", $specialite["id"]); ?>
+                            <?php $restaurants = getAllRows("restaurant", ["specialite_id" => $specialite["id"]]); ?>
                             <?php foreach ($restaurants as $restaurant) : ?>
                             <?php $image = (empty($restaurant["image"])) ? "images/favicon2.png" : "uploads/" .$restaurant["image"]; ?>
                               <article class="card border-0">

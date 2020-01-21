@@ -1,57 +1,31 @@
 <?php require_once 'layout/header_resto.php';
 
-
+  
 ?>
 
 
     <section class="menus" id="menu">
 
       <div class="container">
+          
         <h1 class="text-center">Pizzas</h1>
 
         <div class="menus_list mt-5">
 
-        
+            <?php $plats = getAllRows("plat", ["restaurant_id" => $id, "type_plat_id" => 1]); ?>
             
-            <div class="card border-0">
-              <img class="card-img-top img_menu" src="images/bCo_alpes.jpg" alt="pizza 4 fromages">
-              <div class="card-body">
-                <h5 class="card-title">Pizza 4 fromages des Alpes</h5>
-                <p class="card-text">Sauce tomate BIO maison, mozzarella artisanale française, Tome des Bauges AOP, Bleu du Vercors AOP, Reblochon de Savoie AOP et origan.</p>
-                <p class="card-text prix">13,90€</p>
-                <a href="#" class="btn btn-primary">Commander</a>
-              </div>
-            </div>
-
-            <div class="card border-0">
-              <img class="card-img-top img_menu" src="images/bCo_flammenkuche.jpg" alt="flammekuche">
-              <div class="card-body">
-                <h5 class="card-title">Flammenkeuche</h5>
-                <p class="card-text">Fromage blanc et crème fraîche, fondue d’oignons maison, poitrine paysanne fumée au bois de hêtre et munster AOP.</p>
-                <p class="card-text">14,90€</p>
-                <a href="#" class="btn btn-primary">Commander</a>
-              </div>
-            </div>
-          
-            <div class="card border-0">
-              <img class="card-img-top img_menu" src="images/bCo_meridionnale.jpg" alt="pizza méridionnale">
-              <div class="card-body">
-                <h5 class="card-title">Pizza méridionale</h5>
-                <p class="card-text">Sauce tomate BIO maison, mozzarella artisanale française, chiffonnade de jambon blanc ardéchois, champignons frais, œuf, filet d’huile artisanale au basilic et origan.</p>
-                <p class="card-text">12,90€</p>
-                <a href="#" class="btn btn-primary">Commander</a>
-              </div>
-            </div>
-
-            <div class="card border-0">
-              <img class="card-img-top img_menu" src="images/bCo_vegetarienne.jpg" alt="pizza végétarienne">
-              <div class="card-body">
-                <h5 class="card-title">Pizza végétarienne</h5>
-                <p class="card-text">Sauce tomate BIO maison, mozzarella artisanale française, champignons frais, poivrons frais, fondue d’oignons maison, filet d’huile artisanale au basilic et origan.</p>
-                <p class="card-text">13,90€</p>
-                <a href="#" class="btn btn-primary">Commander</a>
-              </div>
-            </div>
+            <?php foreach ($plats as $plat) : ?>
+            <?php $image = (empty($plat["image"])) ? " " : "uploads/" .$plat["image"]; ?>
+                <div class="card border-0">
+                   <img class="card-img-top img_menu" src="<?= $image; ?>" alt="<?= $plat["nom"]; ?>">
+                   <div class="card-body">
+                     <h5 class="card-title"><?= $plat["nom"]; ?></h5>
+                     <p class="card-text"><?= $plat["description"]; ?></p>
+                     <p class="card-text prix"><?= $plat["prix"]; ?> €</p>
+                     <a href="#" class="btn btn-primary">Commander</a>
+                   </div>
+                </div>
+            <?php endforeach; ?>
 
         </div><!--/menus_list-->
 
