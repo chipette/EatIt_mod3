@@ -5,7 +5,7 @@ require_once __DIR__ . "/../model/database.php";
 $id = $_GET["id"]; //je récupère l'id du resto sur lequel l'utilisateur a cliqué
 $resto = getOneRow("restaurant", $id); //récupère la ligne qui correspond à l'id récupéré via l'url
 $image = (empty($resto["image"])) ? "images/favicon.svg" : "uploads/" .$resto["image"];
-$logo = (empty($resto["logo"])) ? "images/favicon2.png" : "uploads/" .$resto["logo"];
+$logo = (empty($resto["logo"])) ? "images/favicon2.png" : "images/" .$resto["logo"];
 $specialites = getAllRows("specialite");
 
 
@@ -47,7 +47,7 @@ $specialites = getAllRows("specialite");
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMobile">
                   <?php foreach ($specialites as $specialite) : ?>
                     <h5 class="dropdown-header"><?= $specialite["libelle"]; ?></h5>
-                    <?php $restaurants = getAllRowsToCat("restaurant", "specialite_id", $specialite["id"]); ?>
+                    <?php $restaurants = getAllRows("restaurant", ["specialite_id" => $specialite["id"]]); ?>
                     
                         <?php foreach ($restaurants as $restaurant) : ?>
                             <a class="dropdown-item" href="resto.php"><?= $restaurant["nom"]; ?></a>
@@ -117,56 +117,7 @@ $specialites = getAllRows("specialite");
 
 
   
-    <header class="page_header">
-
-      <section class="restos">
-
-          <div class="container">
-
-            <article class="presentation_resto">
-              <div class="restos_title">
-                 
-                <div class="restos_logo"><img src="<?= $logo; ?>" alt="<?= "logo " .$resto["nom"]; ?>" width="50"></div>
-                <h2><?= $resto["nom"] ?></h2>
-              </div>
-
-              <div class="restos_txt">
-                <p><?= $resto["adresse"]; ?></p>
-
-                <p><?= $resto["description"]; ?></p>
-              </div>
-            </article>
-
-
-            <div class="restos_img"><img src="<?= $image; ?>" alt="<?= "logo " .$resto["nom"]; ?>" ></div><!--/resto_img-->
-
-          </div><!--/container-->
-        </section><!--/resto-->
-
-          <nav class="navbar navbar-expand-lg navbar-light bg-orange d-none d-md-block sec_nav mt-3">
-            <div class="container">
-
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#menu">Menus</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#acc">Entrées & accompagnements</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#dessert">Desserts</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#boisson">Boissons</a>
-                  </li>
-                </ul>
-
-            </div>
-          </nav>
-
-
-
-    </header><!--/page_header-->
+    
 
 
   

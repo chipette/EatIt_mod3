@@ -53,10 +53,10 @@ function getAllRows(string $table, array $where = [], array $orderBy = []) {
 
     $stmt = $connexion->prepare($query);//je prépare la requête
     foreach ($where as $column => $value) {
-        $stmt->bindParam(":$column", $value);
+        $stmt->bindValue(":$column", $value);
     }
     $stmt->execute(); //j'exécute la requête
-
+    
     // Retourner les résultats sous forme de tableau que l'on parcourera avec une boucle
     return $stmt->fetchAll();
 }
@@ -69,8 +69,8 @@ function getAllRows(string $table, array $where = [], array $orderBy = []) {
  * @return type Array : Lignes des tables
  */
 function getAllRowsToCat(string $table, string $entree_id, int $id) {
-    global $connexion; //je définie la portée de la variable $connexion comme étant "globale", donc elle existe dans la fonction
-    
+    global $connexion; 
+   
     // Exécuter une requête SQL
     $query = "SELECT * FROM $table WHERE $entree_id = :id";//je définie ma requête
 
