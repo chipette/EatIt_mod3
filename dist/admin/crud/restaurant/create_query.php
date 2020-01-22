@@ -1,35 +1,34 @@
 <?php
-// fichier de requêtes SQL vers la BDD quand on veut ajouter un médecin
-
 require_once __DIR__ . "/../../security.php";
 require_once __DIR__ . "/../../../model/database.php";
 
 $nom = $_POST["nom"];
-$prenom = $_POST["prenom"];
+$adresse = $_POST["adresse"];
+$description = $_POST["description"];
+$specialite_id = $_POST["specialite_id"];
+$logo = $_FILES["logo"]["name"];
 $image = $_FILES["image"]["name"]; //on veur récupérer le nom du fichier uploadé, et il est uploadé sous forme d'une tableau dont l'index est "image", 
 //et on a dans ce tableau "image" à l'index "name", le nom du fichier à uploader
-$specialite_ids = $_POST["specialite_ids"];
-$description = $_POST["description"];
+
+
 
 
 // Gérer l'upload du fichier
 move_uploaded_file($_FILES["image"]["tmp_name"], "../../../uploads/" . $image);
+move_uploaded_file($_FILES["logo"]["tmp_name"], "../../../uploads/" . $logo); 
 
 //on appelle la "super fonction" qui va insérer les données en bdd, on lui passe en paramètres le nom de la table concernée et les données sous forme de tableau
 //associatif
-//comme dans cette "super fonction" il y a un return du dernier id inséré (voir dans fichier database.php), on récupère cet id dans la variable "$medecin_id"
-$medecin_id = insertRow("medecin", [
+//comme dans cette "super fonction" il y a un return du dernier id inséré (voir dans fichier database.php), on récupère cet id dans la variable "$resto_id"
+$resto_id = insertRow("restaurant", [
     "nom" => $nom,
-    "prenom" => $prenom,
+    "adresse" => $adresse,
+    "description" => $description,
+    "logo" => $logo,
     "image" => $image,
-    "description" => $description
+    "specialite_id" => $specialite_id
+    
 ]);
 
-//je boucle sur le tabelau des specialite_ids pour faire entrer dans la table de jointure (ou table associative) la ou les spécialités du nouveau medecin ajouté
-foreach ($specialite_ids as $specialite_id) {
-    insertRow("medecin_has_specialite", [
-        "medecin_id" => $medecin_id,
-        "specialite_id" => $specialite_id
-    ]);
-}
+//Rediriger vers la liste du crud
 header("Location: index.php");

@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . "/model/database.php";
+require_once __DIR__ . "/functions.php";
 
+$user = getCurrentUser();
 
 $id = $_GET["id"]; //je récupère l'id du resto sur lequel l'utilisateur a cliqué
 $resto = getOneRow("restaurant", $id); //récupère la ligne qui correspond à l'id récupéré via l'url
@@ -13,8 +15,7 @@ $accs = getAllRows("plat", ["restaurant_id" => $id, "type_plat_id" => 2], ["prix
 $desserts = getAllRows("plat", ["restaurant_id" => $id, "type_plat_id" => 3], ["prix" => "ASC"]);
 $boissons = getAllRows("plat", ["restaurant_id" => $id, "type_plat_id" => 4], ["prix" => "ASC"]);
 
-require_once 'layout/header.php';
-require_once 'layout/nav.php';
+getHeader($resto["nom"]);
 ?>
 
 <header class="page_header">
@@ -163,4 +164,4 @@ require_once 'layout/nav.php';
     </div><!--/container-->  
 </section><!--/boissons -->
 
-<?php require_once 'layout/footer.php'; ?>
+<?php getFooter(); ?>

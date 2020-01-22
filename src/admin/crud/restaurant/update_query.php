@@ -4,10 +4,11 @@ require_once __DIR__ . "/../../../model/database.php";
 
 $id = $_POST["id"];
 $nom = $_POST["nom"];
-$prenom = $_POST["prenom"];
+$adresse = $_POST["adresse"];
 $description = $_POST["description"];
+$logo = $_FILES["logo"]["name"];
 $image = $_FILES["image"]["name"];
-$specialite_ids = $_POST["specialite_ids"];
+$specialite_id = $_POST["specialite_id"];
 
 
 if ($image) {
@@ -15,28 +16,29 @@ if ($image) {
     move_uploaded_file($_FILES["image"]["tmp_name"], "../../../uploads" . $image);
 } else {
     //récupérer l'ancienne image et la renvoyer en bdd, pour la remettre en tant qu'image
-    $medecin = getOneRow("medecin", $id);
-    $image = $medecin["image"];
+    $restaurant = getOneRow("restaurant", $id);
+    $image = $restaurant["image"];
+}
+
+if ($logo) {
+    // Gérer l'upload du fichier
+    move_uploaded_file($_FILES["logo"]["tmp_name"], "../../../uploads" . $image);
+} else {
+    //récupérer l'ancienne image et la renvoyer en bdd, pour la remettre en tant qu'image
+    $restaurant = getOneRow("restaurant", $id);
+    $logo = $restaurant["logo"];
 }
 
 
-updateRow("medecin", $id, [
+updateRow("restaurant", $id, [
     "nom" => $nom,
-    "prenom" => $prenom,
+    "adresse" => $adresse,
     "description" => $description,
-    "image" => $image
+    "logo" => $logo,
+    "image" => $image,
+    "specialite_id" => $specialite_id
 ]);
 
 
-//j'appel la fonction pour supprimer de la BDD, les specialites du médecin à mettre à jour (lien avec l'id)
-deleteSpecialiteMedecin($id);
-
-//je rajoute dans la BDD, les specialites du médecin à mettre à jour
-foreach ($specialite_ids as $specialite_id) {
-    insertRow("medecin_has_specialite", [
-       "medecin_id" => $id,
-        "specialite_id"=> $specialite_id
-    ]);
-}
 
 header("Location: index.php");

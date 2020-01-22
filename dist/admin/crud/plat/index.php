@@ -1,11 +1,12 @@
 <?php
 require_once __DIR__ . "/../../../model/database.php";
 
-if (isset($_GET["resto"])) {
-    $id = $_GET["resto"];
-    $plats = getAllRows("plat", ["restaurant_id" => $id]);
+
+if (isset($_GET["resto"])) { //si il y a un id "resto + qq chose" dans l'url "resto venant du name du select de la liste déroulante des restos à choisir"
+    $id = $_GET["resto"];   // je capture l'id du resto choisi dans une variable $id
+    $plats = getAllplatsByResto($id);
 } else {
-    $plats = getAllRows("plat");
+    $plats = getAllplatsByResto();
 }
 
 $restaurants = getAllRows("restaurant");
@@ -35,8 +36,8 @@ require_once __DIR__ . "/../../layout/header.php";
 <hr>
 
 <form method="GET" action="index.php" class="form-inline">
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Selectionnez votre restaurant</label>
+    <div class="form-group mr-sm-3 mb-2">
+        <label class="mr-2" for="exampleFormControlSelect1">Selectionnez votre restaurant</label>
         <select name="resto" class="form-control" id="exampleFormControlSelect1">
             <option disabled selected>Choisissez un resto</option>
             <?php foreach ($restaurants as $restaurant) : ?> 
@@ -46,12 +47,13 @@ require_once __DIR__ . "/../../layout/header.php";
             <?php endforeach; ?>
         </select>
     </div>
-    <button type="submit" class="btn btn-primary">Valider</button>
+    <button type="submit" class="btn btn-primary mb-2">Valider</button>
 </form>
 
 <table class="table table-striped table-bordered">
     <thead class="thead-light">
         <tr>
+            <th>Restaurant</th>
             <th>Nom</th>            
             <th>Description</th>
             <th>Prix</th>
@@ -62,6 +64,7 @@ require_once __DIR__ . "/../../layout/header.php";
     <tbody>
         <?php foreach ($plats as $plat) : ?>
             <tr>
+                <td><?= $plat["restaurant_nom"]; ?></td>
                 <td><?= $plat["nom"]; ?></td>
                 <td><?= $plat["description"]; ?></td>
                 <td><?= $plat["prix"]; ?></td>

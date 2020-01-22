@@ -68,19 +68,19 @@ function getAllRows(string $table, array $where = [], array $orderBy = []) {
  * @param string $table : nom de la table
  * @return type Array : Lignes des tables
  */
-function getAllRowsToCat(string $table, string $entree_id, int $id) {
-    global $connexion; 
+//function getAllRowsToCat(string $table, string $entree_id, int $id) {
+//    global $connexion; 
    
     // Exécuter une requête SQL
-    $query = "SELECT * FROM $table WHERE $entree_id = :id";//je définie ma requête
+//    $query = "SELECT * FROM $table WHERE $entree_id = :id";//je définie ma requête
 
-    $stmt = $connexion->prepare($query);//je prépare la requête
-    $stmt->bindParam(":id", $id);
-    $stmt->execute(); //j'exécute la requête
+//    $stmt = $connexion->prepare($query);//je prépare la requête
+//    $stmt->bindParam(":id", $id);
+//    $stmt->execute(); //j'exécute la requête
 
     // Retourner les résultats sous forme de tableau que l'on parcourera avec une boucle
-    return $stmt->fetchAll();
-}
+//    return $stmt->fetchAll();
+//}
 
 
 /**
@@ -104,7 +104,7 @@ function getOneRow(string $table, int $id) {
     return $stmt->fetch();
 }
 
-
+ 
 /**
  * Insérer une nouvelle ligne dans une table
  * @global type $connexion Connection à la base de données

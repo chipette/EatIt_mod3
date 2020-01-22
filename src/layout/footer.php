@@ -1,4 +1,8 @@
 <!-- ici j'ai la fermetures des balises "main" et "body" -->
+<?php 
+require_once __DIR__ . "/../model/database.php";
+$reseaux_sociaux = getAllRows("reseau_social"); 
+?>
 
     </main>
 

@@ -1,7 +1,8 @@
 <?php
-require_once 'layout/header.php';
-require_once 'layout/header_home.php';
-require_once 'layout/nav.php';
+require_once __DIR__ . "/model/database.php";
+require_once __DIR__ . '/functions.php';
+
+getHeaderHome("Accueil");
 ?>
 
 <section class="d-block d-md-none commande_rapide">
@@ -222,4 +223,4 @@ require_once 'layout/nav.php';
     </div>
 </section>
 
-<?php require_once 'layout/footer.php'; ?>
+<?php getFooter(); ?>

@@ -1,11 +1,11 @@
 <?php 
-
 require_once __DIR__ . "/../model/database.php";
+require_once __DIR__ . "/../functions.php";
+
+$user = getCurrentUser();
 
 $reseaux_sociaux = getAllRows("reseau_social"); 
-
 ?>
-
 
 <header class="header_home"> 
 
@@ -18,7 +18,11 @@ $reseaux_sociaux = getAllRows("reseau_social");
             <div class="login_social">
                 <ul class="navbar-nav login_nav mx-auto mx-md-0 ml-md-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">déja Eater</a> 
+                        <?php if ($user) : ?>
+                            <a class="nav-link" href="admin/logout.php">Me déconnecter</a> 
+                        <?php else: ?>
+                            <a class="nav-link" href="admin/">déja Eater</a> 
+                        <?php endif; ?>
                     </li>
                     <li class="nav-item ml-3">
                         <a class="nav-link" href="#">devenir Eater</a>

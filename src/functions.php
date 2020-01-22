@@ -1,11 +1,18 @@
 <?php
 
-/* 
+/*
  * fichier qui regroupe les fonctions qui n'ont pas de rapports avec la bdd, mais avec l'affichage du site
  */
 
 function getHeader(string $title) {
-    require_once "layout/header.php";
+    require_once 'layout/header.php';
+    getNav();
+}
+
+function getHeaderHome(string $title) {
+    require_once 'layout/header.php';
+    require_once 'layout/header_home.php';
+    getNav();
 }
 
 function getNav() {
@@ -18,8 +25,7 @@ function getFooter() {
 
 function isActive(string $url, bool $endWith = false): bool {
     if (
-        (!$endWith && strpos($_SERVER['REQUEST_URI'], $url))
-        || ($endWith && endsWith($_SERVER['REQUEST_URI'], $url))
+            (!$endWith && strpos($_SERVER['REQUEST_URI'], $url)) || ($endWith && endsWith($_SERVER['REQUEST_URI'], $url))
     ) {
         return true;
     }

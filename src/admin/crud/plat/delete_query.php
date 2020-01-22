@@ -4,7 +4,7 @@ require_once __DIR__ . "/../../../model/database.php";
 
 $id = $_POST["id"];
 
-$error = deleteRow("medecin", $id);
+$error = deleteRow("plat", $id);
 
 if ($error) {
     header("Location: index.php?errcode=" . $error->getCode());

@@ -7,7 +7,7 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link <?php echo isActive("/admin/", true) ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>">
-                    <i class="fa fa-home"></i>
+                    <i class="fa fa-desktop"></i>
                     Dashboard <span class="sr-only">(current)</span>
                 </a>
             </li>
