@@ -28,7 +28,7 @@ $reseaux_sociaux = getAllRows("reseau_social");
                 <ul class="navbar-nav social_nav mx-auto mx-md-0 ml-md-auto mt-2 mt-md-0 mb-3 mb-md-0">
                     <?php foreach ($reseaux_sociaux as $reseau_social) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= $reseau_social["url"]; ?>" target="blank" title="Suivez-nous sur <?= $reseau_social["nom"]; ?>"
+                            <a class="nav-link" href="<?= $reseau_social["url"]; ?>" target="blank" title="Suivez-nous sur <?= $reseau_social["nom"]; ?>">
                                 <i class="fa <?= $reseau_social["icone"]; ?>"></i>
                             </a><span class="sr-only"><?= $reseau_social["nom"]; ?></span>
                         </li>

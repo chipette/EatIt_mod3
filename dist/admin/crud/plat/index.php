@@ -1,8 +1,14 @@
 <?php
 require_once __DIR__ . "/../../../model/database.php";
 
-$specialites = getAllRows("specialite");
-$id = $_GET["id"];
+if (isset($_GET["resto"])) {
+    $id = $_GET["resto"];
+    $plats = getAllRows("plat", ["restaurant_id" => $id]);
+} else {
+    $plats = getAllRows("plat");
+}
+
+$restaurants = getAllRows("restaurant");
 
 require_once __DIR__ . "/../../layout/header.php";
 ?>
@@ -28,22 +34,20 @@ require_once __DIR__ . "/../../layout/header.php";
 
 <hr>
 
-<div class="dropdown mb-5">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Choisissez votre restaurant
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <?php foreach ($specialites as $specialite) : ?>
-        <h5 class="dropdown-header"><?= $specialite["libelle"]; ?></h5>
-        <?php $restaurants = getAllRows("restaurant", ["specialite_id" => $specialite["id"]]); ?>
-
-        <?php foreach ($restaurants as $restaurant) : ?>
-            <a class="dropdown-item" href="#?id=<?= $restaurant["id"]; ?>"><?= $restaurant["nom"]; ?></a>
-        <?php endforeach; ?>
-
-    <?php endforeach; ?>
-  </div>
-</div>
+<form method="GET" action="index.php" class="form-inline">
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Selectionnez votre restaurant</label>
+        <select name="resto" class="form-control" id="exampleFormControlSelect1">
+            <option disabled selected>Choisissez un resto</option>
+            <?php foreach ($restaurants as $restaurant) : ?> 
+                <option value="<?= $restaurant["id"]; ?>">
+                    <?= $restaurant["nom"]; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Valider</button>
+</form>
 
 <table class="table table-striped table-bordered">
     <thead class="thead-light">
@@ -56,8 +60,6 @@ require_once __DIR__ . "/../../layout/header.php";
         </tr>
     </thead>
     <tbody>
-        <?php $plats = getAllRows("plat", ["restaurant_id" => $id]); ?>
-        
         <?php foreach ($plats as $plat) : ?>
             <tr>
                 <td><?= $plat["nom"]; ?></td>
