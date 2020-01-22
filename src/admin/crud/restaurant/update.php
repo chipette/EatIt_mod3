@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/../../../model/database.php";
 
-$id = $_GET["id"]; // récupère l'id du médecin sélectionné dans l'url
+$id = $_GET["id"]; // récupère l'id du restaurant sélectionné dans l'url
 
 $restaurant = getOneRow("restaurant", $id); // a partir de l'id, récupère les données du médecin selectionné (d'où le getOneRow)
 $specialites = getAllRows("specialite");

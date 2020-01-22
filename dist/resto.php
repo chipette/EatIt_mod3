@@ -2,7 +2,7 @@
 require_once __DIR__ . "/model/database.php";
 require_once __DIR__ . "/functions.php";
 
-$user = getCurrentUser();
+$user = getCurrentUser(); //récupérer l'utilisateur actuellement connecté
 
 $id = $_GET["id"]; //je récupère l'id du resto sur lequel l'utilisateur a cliqué
 $resto = getOneRow("restaurant", $id); //récupère la ligne qui correspond à l'id récupéré via l'url

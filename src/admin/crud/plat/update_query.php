@@ -5,8 +5,11 @@ require_once __DIR__ . "/../../../model/database.php";
 $id = $_POST["id"];
 $nom = $_POST["nom"];
 $description = $_POST["description"];
-$image = $_FILES["image"]["name"];
 $prix = $_POST["prix"];
+$image = $_FILES["image"]["name"]; //on veur récupérer le nom du fichier uploadé, et il est uploadé sous forme d'une tableau dont l'index est "image", 
+//et on a dans ce tableau "image" à l'index "name", le nom du fichier à uploader
+$restaurant_id = $_POST["restaurant_id"];
+$type_plat_id = $_POST["type_plat_id"];
 
 
 if ($image) {
@@ -23,7 +26,9 @@ updateRow("plat", $id, [
     "nom" => $nom,
     "description" => $description,
     "image" => $image,
-    "prix" => $prix
+    "prix" => $prix,
+    "restaurant_id" => $restaurant_id,
+    "type_plat_id" => $type_plat_id
 ]);
 
 

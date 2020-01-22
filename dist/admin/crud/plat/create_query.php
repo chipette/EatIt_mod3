@@ -8,6 +8,7 @@ $prix = $_POST["prix"];
 $image = $_FILES["image"]["name"]; //on veur récupérer le nom du fichier uploadé, et il est uploadé sous forme d'une tableau dont l'index est "image", 
 //et on a dans ce tableau "image" à l'index "name", le nom du fichier à uploader
 $restaurant_id = $_POST["restaurant_id"];
+$type_plat_id = $_POST["type_plat_id"];
 
 
 
@@ -22,7 +23,8 @@ $plat_id = insertRow("plat", [
     "description" => $description,
     "image" => $image,
     "prix" => $prix,
-    "restaurant_id" => $restaurant_id
+    "restaurant_id" => $restaurant_id,
+    "type_plat_id" => $type_plat_id
 ]);
 
 //Rediriger vers la liste du crud

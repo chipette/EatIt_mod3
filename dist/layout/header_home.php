@@ -18,14 +18,14 @@ $reseaux_sociaux = getAllRows("reseau_social");
             <div class="login_social">
                 <ul class="navbar-nav login_nav mx-auto mx-md-0 ml-md-auto">
                     <li class="nav-item">
-                        <?php if ($user) : ?>
-                            <a class="nav-link" href="admin/logout.php">Me déconnecter</a> 
+                        <?php if ($user) : ?><!-- si il y a un utilisateur de connecter on aura "Me déconnecter"-->
+                            <a class="nav-link" href="admin/logout.php">Me déconnecter</a><!-- et je suis redirigé vers un logout--> 
                         <?php else: ?>
-                            <a class="nav-link" href="admin/">déja Eater</a> 
+                            <a class="nav-link" href="admin/">déja Eater</a><!--sinon "déjà Eater" et dirigé vers un formulaire de login-->
                         <?php endif; ?>
                     </li>
                     <li class="nav-item ml-3">
-                        <a class="nav-link" href="#">devenir Eater</a>
+                        <a class="nav-link" href="#">devenir Eater</a><!--redirigé vers un formulaire d'inscription-->
                     </li>
                 </ul>
 

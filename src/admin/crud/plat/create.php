@@ -1,14 +1,15 @@
 <?php require_once __DIR__ . "/../../layout/header.php"; 
 
 $restaurants = getAllRows("restaurant");
+$categories = getAllRows("type_plat");
 
 ?>
 
 <h1>Ajout d'un plat</h1>
 
 <form action="create_query.php" method="post" enctype="multipart/form-data">
-    <div class="form-group mr-sm-3 mb-2">
-        <label class="mr-2" for="exampleFormControlSelect1">Selectionnez votre restaurant</label>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Selectionnez votre restaurant</label>
         <select name="restaurant_id" class="form-control" id="exampleFormControlSelect1">
             <option disabled selected>Choisissez un resto</option>
             <?php foreach ($restaurants as $restaurant) : ?> 
@@ -25,6 +26,17 @@ $restaurants = getAllRows("restaurant");
     <div class="form-group">
         <label>Description</label>
         <input type="text" name="description" class="form-control" placeholder="Description rapide du plat" required>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect2">Selectionnez la catégorie du plat créé</label>
+        <select name="type_plat_id" class="form-control" id="exampleFormControlSelect2">
+            <option disabled selected>Choisissez une catégorie</option>
+            <?php foreach ($categories as $categorie) : ?> 
+                <option value="<?= $categorie["id"]; ?>">
+                    <?= $categorie["libelle"]; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
     </div>
     <div class="form-group">
         <label>Prix</label>
